@@ -1,0 +1,26 @@
+[project]
+name = "face-search-blockchain-pipeline"
+version = "1.0.0"
+description = "Authorized face scan, reverse-image search, and local blockchain verification demo"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "hatchling>=1.32.0",
+    "insightface>=1.0.1",
+    "onnxruntime>=1.29.0",
+    "opencv-python-headless>=5.0.0.93",
+    "pillow>=12.3.0",
+    "requests>=2.34.2",
+    "rich>=15.0.0",
+    "web3>=8.0.0",
+]
+
+[project.scripts]
+face-chain = "face_pipeline.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["face_pipeline"]
